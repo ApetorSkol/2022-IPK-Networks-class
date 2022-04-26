@@ -1,8 +1,10 @@
 /***********************************
+
         Autor:  Matej Slivka
         login:  xslivk03
         IPK Projekt 2
         Sniffer packetov
+        
 ***********************************/
 Zoznam odovzdaných súborov: README.md ,packet-sniffer.cpp, manual.pdf , Makefile
 Implementacia packet snifferu v predmete Počítačové komunikácie a siete

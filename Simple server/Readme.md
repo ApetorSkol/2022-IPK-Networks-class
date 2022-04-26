@@ -1,9 +1,15 @@
 /***********************************
+
         Autor:  Matej Slivka
+	
         login:  xslivk03
+	
         IPK Projekt 1
+	
         Jednoduchý server
+	
 ***********************************/
+
 Implementacia jednoduchého serveru v predmete Počítačové komunikácie a siete
 Server dokáže vrátiť domenové meno, informácie o CPU a aktualnú záťaž procesoru
 

@@ -6,6 +6,7 @@
         Sniffer packetov
         
 ***********************************/
+
 Zoznam odovzdaných súborov: README.md ,packet-sniffer.cpp, manual.pdf , Makefile
 Implementacia packet snifferu v predmete Počítačové komunikácie a siete
 Packet sniffer dokaže spracovať protokoly ICMP UDP ARP TCP
@@ -54,6 +55,7 @@ Projekt bol implementovany v jazyku C++
         0x0030: 00 00 00 00 00 00 10 5f  73 70 6f 74 69 66 79 2d   ......._ spotify-
         0x0040: 63 6f 6e 6e 65 63 74 04  5f 74 63 70 05 6c 6f 63   connect. _tcp.loc
         0x0050: 61 6c 00 00 0c 00 01   
+        
 **** Poznámka k implementácii:
         Pri spustení program s argumentom -i, do ktorého nebola prirdená žiadna hodnota, vypisať všetky dostupné rozhrania.
         Túto funkčnosť program nemá. Ak je treba vypisať všetky rozhrania tak je potrebné argument nevypísať.

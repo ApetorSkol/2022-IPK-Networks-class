@@ -1,11 +1,8 @@
 /***********************************
 
         Autor:  Matej Slivka
-	
         login:  xslivk03
-	
         IPK Projekt 1
-	
         Jednoduchý server
 	
 ***********************************/

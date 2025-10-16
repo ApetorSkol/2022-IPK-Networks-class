@@ -7,22 +7,34 @@
         
 ***********************************/
 
-Zoznam odovzdaných súborov: README.md ,packet-sniffer.cpp, manual.pdf , Makefile
-Implementacia packet snifferu v predmete Počítačové komunikácie a siete
-Packet sniffer dokaže spracovať protokoly ICMP UDP ARP TCP
+Zoznam odovzdaných súborov: 
+- README.md
+- packet-sniffer.cpp
+- manual.pdf
+- Makefile
 
-Projekt bol implementovany v jazyku C++
+Implementacia packet snifferu v predmete Počítačové komunikácie a siete
+Packet sniffer dokaže spracovať protokoly 
+- **ICMP** 
+- **UDP** 
+- **ARP** 
+- **TCP**
+
+Projekt bol implementovany v jazyku **C++**
 
 **** Prerekvizity:
-        Linuxovy OS
-        zdrojový súbor packet-sniffer.cpp
-        Makefile
-        prekladací systém make
+- Linuxovy OS
+- zdrojový súbor `packet-sniffer.cpp`
+- Makefile
+- prekladací systém make
 
 **** Inštalácia:
-        1. do jedného súboru si rozbalíme zdrojový súbor packet-sniffer.cpp a Makefile
-        2. spustime Makefile pomocou konzole a príkazu [make]
-        3. tymto by sa nám mal vytvoriť spustiteľný súbor [ipk-sniffer]
+    1. do jedného súboru si rozbalíme zdrojový súbor packet-sniffer.cpp a Makefile
+    2. spustime Makefile pomocou konzole a príkazu 
+        ```sh
+        make
+        ```
+    3. tymto by sa nám mal vytvoriť spustiteľný súbor `ipk-sniffer`
 
 **** Spustenie:
         Program by sa mal spustiť pomocou príkazu

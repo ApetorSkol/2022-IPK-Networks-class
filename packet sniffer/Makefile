@@ -1,8 +1,6 @@
 # urcime aky chceme prekladac
 CC = g++
 
-# nejake vlajocky do CFLAGS
-
 SOURCE = packet-sniffer.cpp
 
 all:

@@ -65,22 +65,22 @@ struct sniff_layer4 {
 
 // this structure is from https://www.tcpdump.org/pcap.html
 struct sniff_ip {
-	u_char ver_head_len;    /* version << 4 | header length >> 2 */
-	u_char type_of_ser;		/* type of service */
-	u_short total_len;		/* total length */
-	u_short id;		        /* identification */
-	u_short frag_of;		/* fragment offset field */
-	u_char time2live;		/* time to live */
-	u_char protocol;		/* protocol */
-	u_short check_sum;      /* checksum */
-	struct in_addr src,dst; /* source and dest address */
+    u_char ver_head_len;    /* version << 4 | header length >> 2 */
+    u_char type_of_ser;		/* type of service */
+    u_short total_len;		/* total length */
+    u_short id;		        /* identification */
+    u_short frag_of;		/* fragment offset field */
+    u_char time2live;		/* time to live */
+    u_char protocol;		/* protocol */
+    u_short check_sum;      /* checksum */
+    struct in_addr src,dst; /* source and dest address */
 };
 
 // function to exit  program
 void ctrl_c(int signum)
 {
-	std::cout<< "\nUser initialized shut down of program.\nShuting down " << signum << std::endl;
-	exit(signum);
+    std::cout<< "\nUser initialized shut down of program.\nShuting down " << signum << std::endl;
+    exit(signum);
 }
 
 // this function prints packet header with port
@@ -455,11 +455,11 @@ int main(int argc, char *argv[])
                 exit(0);
             case ':': 
                 std::cout << "Argument needs a value. \nUsage\n./ipk-sniffer [-i rozhraní | --interface rozhraní] {-p ­­port} {[--tcp|-t] [--udp|-u] [--arp] [--icmp] } {-n num} errno: " << errno << std::endl;
-    		    exit(EXIT_FAILURE);
+                exit(EXIT_FAILURE);
                 break;
             case '?': 
                 std::cout << "Invalid argument. \nUsage\n./ipk-sniffer [-i rozhraní | --interface rozhraní] {-p ­­port} {[--tcp|-t] [--udp|-u] [--arp] [--icmp] } {-n num} errno: " << errno << std::endl;
-    		    exit(EXIT_FAILURE);
+                exit(EXIT_FAILURE);
         } 
     }
 
@@ -476,9 +476,9 @@ int main(int argc, char *argv[])
     if( pcap_findalldevs( &alldevs  , errbuf) )
     {
         std::cout << "Error finding devices \n" << errno << std::endl;	   
-		fprintf(stderr,"%s" , errbuf);
-	    exit(EXIT_FAILURE);
-	}
+        fprintf(stderr,"%s" , errbuf);
+        exit(EXIT_FAILURE);
+    }
 
     // if interface was not specified , print all interfaces
     if  (arguments.interface == nullptr)
@@ -501,8 +501,8 @@ int main(int argc, char *argv[])
         }
         if ((alldevs == nullptr)||(alldevs->next == nullptr))
         {
-            std::cout << "Program could not find specified interface \n" << errno << std::endl;	   
-		    exit(EXIT_FAILURE);
+            std::cout << "Program could not find specified interface \n" << errno << std::endl;
+            exit(EXIT_FAILURE);
         }
         alldevs = alldevs->next;
     } while ( alldevs != nullptr);
@@ -637,27 +637,27 @@ int main(int argc, char *argv[])
 
     // looks up network
     if (pcap_lookupnet(dev, &net, &mask, errbuf) == -1) {
-		fprintf(stderr, "Can not get netmask for device %s: %s\n", dev, errbuf);
+        fprintf(stderr, "Can not get netmask for device %s: %s\n", dev, errbuf);
         exit(2);
-	}
+    }
     // opens network
     handle = pcap_open_live(dev, BUFSIZ, 1, 1000, errbuf);
     if (handle == NULL) {
-	    fprintf(stderr, "Can not open device %s: %s\n", dev, errbuf);
-	    exit(2);
+        fprintf(stderr, "Can not open device %s: %s\n", dev, errbuf);
+        exit(2);
     }
 
     // create filter to fp
 
     if (pcap_compile(handle, &fp, filter_exp, 0, net) == -1) {
-	    fprintf(stderr, "Can not create filter %s: %s\n", filter_exp, pcap_geterr(handle));
-	    exit(2);
+        fprintf(stderr, "Can not create filter %s: %s\n", filter_exp, pcap_geterr(handle));
+        exit(2);
     }
 
     // apply fp filter
     if (pcap_setfilter(handle, &fp) == -1) {
-	    fprintf(stderr, "Can not install filter %s: %s\n", filter_exp, pcap_geterr(handle));
-	    exit(2);
+        fprintf(stderr, "Can not install filter %s: %s\n", filter_exp, pcap_geterr(handle));
+        exit(2);
     }
     //***********************************************************************************
     //This document is Copyright 2002 Tim Carstens. All rights reserved. Redistribution and use, with or without modification, are permitted provided that the following conditions are met:
@@ -670,5 +670,5 @@ int main(int argc, char *argv[])
     pcap_loop(handle, arguments.n, got_packet, NULL);
 
     // close handle
-	pcap_close(handle);
+    pcap_close(handle);
 }
